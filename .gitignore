@@ -1,6 +1,8 @@
 # Build directory
 build/
 .cache/
+.github
+
 
 # Prerequisites
 *.d

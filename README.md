@@ -1,11 +1,7 @@
-# SMO-Exlaunch-Base
+# SMO-Random-Movement
 
-A base repository using exlaunch-cmake that contains code for modifying Super Mario Odyssey 1.0.
-
-# Notes
-
-Currently untested
-
+A Mod for super mario odyssey that randomly moves you when you press a or b. Made by Silverdragon_12, Based off of SMO-Exlaunch-Base by CraftyBoss.
+(This code is super unneat, im very bad at writing neat code)
 # Credits
 
 - [exlaunch](https://github.com/shadowninja108/exlaunch/)

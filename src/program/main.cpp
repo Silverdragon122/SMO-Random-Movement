@@ -256,7 +256,8 @@ static void Callback(HakoniwaSequence *thisPtr) {
         }
         if (al::isPadHoldA(-1)) {
             LastJumpHeightx = pos.x + al::getRandom(-23, 23);
-                LastJumpHeightz = pos.z + al::getRandom(-23, 23);
+            LastJumpHeightz = pos.z + al::getRandom(-23, 23);
+            LastJumpHeighty = pos.y + al::getRandom(-23, 23);
                 al::setVelocityZ(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightz);
                 al::setVelocityX(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightx);
             al::setVelocityY(rs::getPlayerActor(thisPtr->curScene), LastJumpHeighty);

@@ -241,29 +241,30 @@ static void Callback(HakoniwaSequence *thisPtr) {
         int LastJumpHeightz = 0;
         gTextWriter->beginDraw();
         //New thread for setting a timer for 5 seconds
-        gTextWriter->setCursorFromTopLeft(sead::Vector2f(10.f, 10.f));
-        sead::Vector3f pos = getVelocity(rs::getPlayerActor(thisPtr->curScene));
-        gTextWriter->printf("X: %f\nY: %f\nZ: %f\n", pos.x, pos.y, pos.z);
-        //Every second, make there be a 1% chance of the player y velocity being set to +100
-        if (al::isPadHoldB(-1)) {
-            LastJumpHeighty = pos.y + al::getRandom(-23, 23);
-                LastJumpHeightx = pos.x + al::getRandom(-23, 23);
-                LastJumpHeightz = pos.z + al::getRandom(-23, 23);
-            al::setVelocityY(rs::getPlayerActor(thisPtr->curScene), LastJumpHeighty);
-            al::setVelocityZ(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightz);
-            al::setVelocityX(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightx);
-
-        }
-        if (al::isPadHoldA(-1)) {
-            LastJumpHeightx = pos.x + al::getRandom(-23, 23);
-            LastJumpHeightz = pos.z + al::getRandom(-23, 23);
-            LastJumpHeighty = pos.y + al::getRandom(-23, 23);
+        if (rs::getPlayerActor(thisPtr->curScene)) {
+            gTextWriter->setCursorFromTopLeft(sead::Vector2f(10.f, 10.f));
+            sead::Vector3f pos = getVelocity(rs::getPlayerActor(thisPtr->curScene));
+            gTextWriter->printf("X: %f\nY: %f\nZ: %f\n", pos.x, pos.y, pos.z);
+            //Every second, make there be a 1% chance of the player y velocity being set to +100
+            if (al::isPadHoldB(-1)) {
+                LastJumpHeighty = pos.y + al::getRandom(-23, 23);
+                    LastJumpHeightx = pos.x + al::getRandom(-23, 23);
+                    LastJumpHeightz = pos.z + al::getRandom(-23, 23);
+                al::setVelocityY(rs::getPlayerActor(thisPtr->curScene), LastJumpHeighty);
                 al::setVelocityZ(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightz);
                 al::setVelocityX(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightx);
-            al::setVelocityY(rs::getPlayerActor(thisPtr->curScene), LastJumpHeighty);
-            al::setVelocityZ(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightz);
-            al::setVelocityX(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightx);
 
+            }
+            if (al::isPadHoldA(-1)) {
+                LastJumpHeightx = pos.x + al::getRandom(-23, 23);
+                LastJumpHeightz = pos.z + al::getRandom(-23, 23);
+                LastJumpHeighty = pos.y + al::getRandom(-23, 23);
+                al::setVelocityZ(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightz);
+                al::setVelocityX(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightx);
+                al::setVelocityY(rs::getPlayerActor(thisPtr->curScene), LastJumpHeighty);
+                al::setVelocityZ(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightz);
+                al::setVelocityX(rs::getPlayerActor(thisPtr->curScene), LastJumpHeightx);
+            }
         }
 
         gTextWriter->endDraw();

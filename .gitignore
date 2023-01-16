@@ -1,7 +1,7 @@
 # Build directory
 build/
 .cache/
-.github
+.github/
 
 
 # Prerequisites

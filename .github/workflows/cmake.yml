@@ -16,7 +16,9 @@ jobs:
     steps:
     - name: Install devkitpro
       run: |
-        sudo apt install -y devkitpro-pacman
+        wget https://apt.devkitpro.org/install-devkitpro-pacman
+        chmod +x ./install-devkitpro-pacman
+        sudo ./install-devkitpro-pacman
         sudo dkp-pacman -S switch-dev
 
     - uses: actions/checkout@v3
